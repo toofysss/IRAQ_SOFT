@@ -50,7 +50,6 @@ echo Press 6 If You Want To Download SUPER POINT
 echo Press 7 If You Want To Download POS
 echo Press 8 If You Want To Download SIP
 echo Press 9 If You Want To Download Remotly
-echo Press 10 If You Want To Download Point Charge Url
 set /p Selected=What Do You Want: 
 
 if "%Selected%" == "0" (
@@ -101,11 +100,6 @@ if "%Selected%" == "8" (
 if "%Selected%" == "9" (
     set url=%Remotly_Url%
     set output=%Remotly_File%
-    goto download
-)
-if "%Selected%" == "10" (
-    set url=%Point_Charge_Url%
-    set output=%Point_Charge_File%
     goto download
 )
 
