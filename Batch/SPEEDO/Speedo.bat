@@ -1,8 +1,8 @@
 @echo off
 
 set CoinfirmPassowrd="spo"
-set SQL_Connecction=127.0.0.1\SALES_DEV -U sa -P 12345
-set SQL_SPEEDO_DB=USE SPEEDOO_DB
+set SQL_Connecction=.\SALES_DEV -U sa -P 12345
+set SQL_SPEEDO_DB=SPEEDOO_DB
 set SQL_SPEEDO_REST_DB=USE RESTAURANT_DB
 set Download_Loc=Download.bat
 set Activty_Loc=Activty.bat
@@ -75,18 +75,18 @@ goto Sql_Speedo_Rest_Management_User
 
 :Speedo_Rest_Reset_Admin
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set /p ID=Enter User ID: 
     set title =Speedo Rest Reset Admin
-    set query=%SQL_SPEEDO_REST_DB%; update T_USERS set USER_PWD ='fpd2Te7d3NwzGck5qAgK8g==' , IS_ENC =1 where USER_CODE = %ID%
+    set query=%SQL_SPEEDO_REST_DB%; update T_USERS set USER_PWD ='fpd2Te7d3NwzGck5qAgK8g==' , IS_ENC =1 where USER_CODE = !ID!
     goto RunQuery
 )
 goto Speedo_Rest_Reset_Admin
 
 :Speedo_Rest_Reset_User
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     cls
     set title =Speedo Rest Reset User
@@ -99,7 +99,7 @@ goto Speedo_Rest_Reset_User
 
 :Speedo_Rest_Add_User
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set /p Pass=Enter Password: 
     set title =Speedo Rest Add User
@@ -138,8 +138,10 @@ goto Sql_Speedo
 :Sql_Speedo_Management_User
 title Speedo Manage Users
 cls
-set query=%SQL_SPEEDO_DB%; SELECT USER_CODE as Code, USER_NAME as Name FROM T_USERS
-sqlcmd -S %SQL_Connecction%  -Q "%query%"
+set query=SELECT USER_CODE as Code, USER_NAME as Name FROM T_USERS
+sqlcmd -S %SQL_Connecction% -d %SQL_SPEEDO_DB% -Q "%query%"
+
+
 echo Press 0 If You Want To Back To Main 
 echo Press 1 If You Want To Reset Admin Password
 echo Press 2 If You Want To Add Admin
@@ -155,7 +157,7 @@ goto Sql_Speedo_Management_User
 
 :Speedo_Reset_Admin
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set /p ID=Enter User ID: 
     set title =Speedo Reset Admin
@@ -166,7 +168,7 @@ goto Speedo_Reset_Admin
 
 :Speedo_Reset_User
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set title =Speedo Reset User
     set "query=%SQL_SPEEDO_DB%; DELETE FROM T_USERS; INSERT INTO T_USERS (USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, BOX_CODE, IS_ENC, SECURETY_CODE, MANDOOB_CODE, STORE_CODE, TYPE_PRICE_CODE, APP_PWD, LEVEL_APP, DRIVER_CODE, TYPE_CH_OFFER) VALUES (1, 'Admin', 'fpd2Te7d3NwzGck5qAgK8g==', 1, 1, 0, 5000, 1, 3, -10, -10, -10, NULL, 1, 0, '')"
@@ -178,7 +180,7 @@ goto Speedo_Reset_User
 
 :Speedo_Add_User
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set title =Speedo Add User
     set /p Pass=Enter Password: 
@@ -191,7 +193,7 @@ goto Speedo_Add_User
 @REM Speedo Active Delete Items
 :Sql_Speedo_Active_Delete_Items
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set title = Speedo Active Delete Items
     set query=%SQL_SPEEDO_DB%; UPDATE T_ITEMS set ACTIVE = 1
@@ -202,7 +204,7 @@ goto Sql_Speedo_Active_Delete_Items
 @REM Speedo Set Items Zero
 :Sql_Speedo_Set_Items_Zero
 setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set title = Speedo Set Items Zero
     set "query=%SQL_SPEEDO_DB%; UPDate T_STORE_BOX set ST_IN=0, ST_OUT=0 where BILL_NUMBER=0 updATE T_BUY_DETAILS SET QTY=0,TOTAL=0,TOTAL_COST=0,QTY_IN=0,QTY_OUT=0,TOTAL_OUT=0 WHERE BILL_NUMBER=0"
@@ -214,7 +216,7 @@ goto Sql_Speedo_Set_Items_Zero
 :Sql_Speedo_Active_Telegram
 setlocal enabledelayedexpansion
 
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set /P groupID=Enter the Telegram Group ID:
     set title = Active Telegram
@@ -382,7 +384,7 @@ set query=%query% UPDate T_STORE_BOX set ST_IN=0, ST_OUT=0 where BILL_NUMBER=0 u
 
 
 
-for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Encrypt.ps1"') do set "password=%%a"
+for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.ps1"') do set "password=%%a"
 if "%password%" == %CoinfirmPassowrd% (
     set title = Sql Speedo Reset Data But Items
     sqlcmd -S %SQL_Connecction% -Q "%query% DELETE FROM T_TAG_PROCCESS WHERE TAG_PROCCESS_CODE > 0  DELETE FROM T_LEVEL WHERE LEVEL_CODE > 1 DELETE FROM T_CLIENT WHERE  ACCOUNT_CODE <> 2100000 DELETE FROM T_ACCOUNTS WHERE ACCOUNT_PARENT=5 AND ACCOUNT_CODE <> 5000 DELETE FROM T_ACCOUNTS WHERE ACCOUNT_PARENT=6 AND ACCOUNT_CODE <> 6000 DELETE FROM T_ACCOUNTS WHERE ACCOUNT_PARENT=7 AND ACCOUNT_CODE <> 7000 DELETE FROM T_ACCOUNTS WHERE ACCOUNT_PARENT=8 AND ACCOUNT_CODE <> 8000 DELETE FROM T_ACCOUNTS WHERE ACCOUNT_PARENT=9 AND ACCOUNT_CODE <> 9000 DELETE FROM T_ACCOUNTS WHERE ACCOUNT_PARENT=21 AND ACCOUNT_CODE <> 2100000 DELETE FROM T_MOVE WHERE ACTIVE=0 OR MOVE_CODE>300 DELETE FROM T_PRINTER WHERE T_ID > 0 delete FROM T_BUY_DETAILS WHERE BILL_NUMBER<>0 delete FROM T_STORE_BOX WHERE BILL_NUMBER<>0 delete FROM T_STORE_TYPE WHERE STORE_CODE >0 DELETE FROM T_USERS WHERE USER_CODE<>1 "

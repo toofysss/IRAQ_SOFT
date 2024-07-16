@@ -105,9 +105,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_PATH%%FireWallLoc%"
 @REM Static IP
 set INTERFACE_NAME=Ethernet
 netsh interface ipv4 delete address name="%INTERFACE_NAME%" addr=%STATIC_IP_Rest%
-netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK% %DEFAULT_GATEWAY_Rest%
-netsh interface ipv4 set dns name="%INTERFACE_NAME%" static %DNS_SERVER%
-netsh interface ipv4 add dns name="%INTERFACE_NAME%" addr=%ALTERNATE_DNS% index=2
+netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK%
 pause
 exit
 goto Connect_Computer_Rest_Ethernet
@@ -120,9 +118,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_PATH%%FireWallLoc%"
 @REM Static IP
 set INTERFACE_NAME=Wi-Fi
 netsh interface ipv4 delete address name="%INTERFACE_NAME%" addr=%STATIC_IP_Rest%
-netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK% %DEFAULT_GATEWAY_Rest%
-netsh interface ipv4 set dns name="%INTERFACE_NAME%" static %DNS_SERVER%
-netsh interface ipv4 add dns name="%INTERFACE_NAME%" addr=%ALTERNATE_DNS% index=2
+netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK%
 pause
 exit
 goto Connect_Computer_Rest_Wifi
@@ -135,9 +131,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_PATH%%FireWallLoc%"
 @REM Static IP
 set INTERFACE_NAME=Wi-Fi
 netsh interface ipv4 delete address name="%INTERFACE_NAME%" addr=%STATIC_IP%
-netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP% %SUBNET_MASK% %DEFAULT_GATEWAY%
-netsh interface ipv4 set dns name="%INTERFACE_NAME%" static %DNS_SERVER%
-netsh interface ipv4 add dns name="%INTERFACE_NAME%" addr=%ALTERNATE_DNS% index=2
+netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP% %SUBNET_MASK%
 pause
 exit
 goto Connect_Computer_Wifi
@@ -149,9 +143,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_PATH%%FireWallLoc%"
 @REM Static IP
 set INTERFACE_NAME=Ethernet
 netsh interface ipv4 delete address name="%INTERFACE_NAME%" addr=%STATIC_IP%
-netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP% %SUBNET_MASK% %DEFAULT_GATEWAY%
-netsh interface ipv4 set dns name="%INTERFACE_NAME%" static %DNS_SERVER%
-netsh interface ipv4 add dns name="%INTERFACE_NAME%" addr=%ALTERNATE_DNS% index=2
+netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP% %SUBNET_MASK%
 pause
 exit
 goto Connect_Computer_Ethernet
@@ -180,10 +172,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_PATH%%FireWallLoc%"
 @REM Static IP
 set INTERFACE_NAME=Ethernet
 netsh interface ipv4 delete address name="%INTERFACE_NAME%" addr=%STATIC_IP_Rest%
-netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK% %DEFAULT_GATEWAY_Rest%
-netsh interface ipv4 set dns name="%INTERFACE_NAME%" static %DNS_SERVER%
-netsh interface ipv4 add dns name="%INTERFACE_NAME%" addr=%ALTERNATE_DNS% index=2
-set "sql_commands=USE RESTAURANT_DB; EXEC sp_changedbowner sa; ALTER DATABASE RESTAURANT_DB SET ENABLE_BROKER;"
+netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK%
+set "sql_commands=USE SPEEDOO_DB; EXEC sp_changedbowner sa; ALTER DATABASE SPEEDOO_DB SET ENABLE_BROKER;"
 set "sql_file=%TEMP%\commands.sql"
 echo %sql_commands% > "%sql_file%"
 echo %sql_commands% | powershell -command "&{Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.Clipboard]::SetText(\"$(Get-Clipboard)\");}"
@@ -200,10 +190,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_PATH%%FireWallLoc%"
 @REM Static IP
 set INTERFACE_NAME=Wi-Fi
 netsh interface ipv4 delete address name="%INTERFACE_NAME%" addr=%STATIC_IP_Rest%
-netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK% %DEFAULT_GATEWAY_Rest%
-netsh interface ipv4 set dns name="%INTERFACE_NAME%" static %DNS_SERVER%
-netsh interface ipv4 add dns name="%INTERFACE_NAME%" addr=%ALTERNATE_DNS% index=2
-set "sql_commands=USE RESTAURANT_DB; EXEC sp_changedbowner sa; ALTER DATABASE RESTAURANT_DB SET ENABLE_BROKER;"
+netsh interface ipv4 set address name="%INTERFACE_NAME%" static %STATIC_IP_Rest% %SUBNET_MASK%
+set "sql_commands=USE SPEEDOO_DB; EXEC sp_changedbowner sa; ALTER DATABASE SPEEDOO_DB SET ENABLE_BROKER;"
 set "sql_file=%TEMP%\commands.sql"
 echo %sql_commands% > "%sql_file%"
 echo %sql_commands% | powershell -command "&{Add-Type -AssemblyName 'System.Windows.Forms'; [System.Windows.Forms.Clipboard]::SetText(\"$(Get-Clipboard)\");}"

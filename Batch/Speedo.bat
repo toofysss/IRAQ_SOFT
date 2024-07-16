@@ -1,7 +1,7 @@
 @echo off
 
 set CoinfirmPassowrd="spo"
-set SQL_Connecction=127.0.0.1\SALES_DEV -U sa -P 12345
+set SQL_Connecction=.\SALES_DEV -U sa -P 12345
 set SQL_SPEEDO_DB=SPEEDOO_DB
 set SQL_SPEEDO_REST_DB=USE RESTAURANT_DB
 set Download_Loc=Download.bat
@@ -15,9 +15,6 @@ set File_Loc="%SCRIPT_PATH%%SCRIPT_NAME%"
 title Speedo
 cls
 color 0F
-set SQL_Connecction=
-set query=SELECT USER_CODE as Code, USER_NAME as Name FROM T_USERS
-sqlcmd -S 127.0.0.1\SALES_DEV -d SPEEDOO_DB  -Q "SELECT USER_CODE as Code, USER_NAME as Name FROM T_USERS"
 echo Press 1 If You Want To Use SQL Server
 echo Press 2 If You Want To Use Download
 echo Press 3 If You Want To Use Activty
@@ -82,7 +79,7 @@ for /f "delims=" %%a in ('powershell.exe -ExecutionPolicy Bypass -File "Speedo.p
 if "%password%" == %CoinfirmPassowrd% (
     set /p ID=Enter User ID: 
     set title =Speedo Rest Reset Admin
-    set query=%SQL_SPEEDO_REST_DB%; update T_USERS set USER_PWD ='fpd2Te7d3NwzGck5qAgK8g==' , IS_ENC =1 where USER_CODE = %ID%
+    set query=%SQL_SPEEDO_REST_DB%; update T_USERS set USER_PWD ='fpd2Te7d3NwzGck5qAgK8g==' , IS_ENC =1 where USER_CODE = !ID!
     goto RunQuery
 )
 goto Speedo_Rest_Reset_Admin
@@ -141,8 +138,8 @@ goto Sql_Speedo
 :Sql_Speedo_Management_User
 title Speedo Manage Users
 cls
-@REM set query=SELECT USER_CODE as Code, USER_NAME as Name FROM T_USERS
-@REM sqlcmd -S %SQL_Connecction% -d %SQL_SPEEDO_DB% -Q "%query%"
+set query=SELECT USER_CODE as Code, USER_NAME as Name FROM T_USERS
+sqlcmd -S %SQL_Connecction% -d %SQL_SPEEDO_DB% -Q "%query%"
 
 
 echo Press 0 If You Want To Back To Main 
