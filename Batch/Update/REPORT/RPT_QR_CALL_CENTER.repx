@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.1.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="RPT_QR_CALL_CENTER" RollPaper="true" Margins="0, 0, 7, 0" PaperKind="Custom" PageWidth="285" PageHeight="239" Version="20.1" ShowPrintStatusDialog="false" ShowPrintMarginsWarning="false" DataMember="PA_PRINT_CALL_CENTER" DataSource="#Ref-0">
+  <Parameters>
+    <Item1 Ref="4" Description="T_ID" ValueSourceSettings="#Ref-2" ValueInfo="0" Name="T_ID" Type="#Ref-3" />
+  </Parameters>
+  <CalculatedFields>
+    <Item1 Ref="5" Name="QTY_T" Expression="Sum([QTY])" DataMember="V_SALES_TEMP" />
+    <Item2 Ref="6" Name="Total_T" Expression="Sum([TOTAL])" DataMember="V_SALES_TEMP" />
+  </CalculatedFields>
+  <Bands>
+    <Item1 Ref="7" ControlType="TopMarginBand" Name="TopMargin" HeightF="6.800667" />
+    <Item2 Ref="8" ControlType="DetailBand" Name="Detail" HeightF="0" />
+    <Item3 Ref="9" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="0" />
+    <Item4 Ref="10" ControlType="ReportFooterBand" Name="ReportFooter" PageBreak="AfterBand" HeightF="40.46542">
+      <Controls>
+        <Item1 Ref="11" ControlType="XRPageBreak" Name="pageBreak1" LocationFloat="0,35.09119" />
+        <Item2 Ref="12" ControlType="XRLabel" Name="label2" Text="label2" TextAlignment="MiddleCenter" SizeF="120.1306,22.1493" LocationFloat="150.2691,0" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="13" EventName="BeforePrint" PropertyName="Text" Expression="[USER_CREATE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="14" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="15" ControlType="XRLabel" Name="label7" TextFormatString="{0:dd/MM/yyyy h:mm:ss tt}" Text="علوة البديري" TextAlignment="MiddleLeft" SizeF="121.693,19.40974" LocationFloat="14.39987,0" Font="Times New Roman, 7pt, style=Bold, Underline" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="16" EventName="BeforePrint" PropertyName="Text" Expression="[C_DATE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="17" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+      </Controls>
+    </Item4>
+    <Item5 Ref="18" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="152.5743">
+      <Controls>
+        <Item1 Ref="19" ControlType="XRBarCode" Name="XrBarCode1" AutoModule="true" SizeF="175,152.5743" LocationFloat="55,0" Padding="10,10,0,0,100">
+          <Symbology Ref="20" Name="QRCode" />
+          <ExpressionBindings>
+            <Item1 Ref="21" EventName="BeforePrint" PropertyName="Text" Expression="[T_ID]" />
+          </ExpressionBindings>
+        </Item1>
+      </Controls>
+    </Item5>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v20.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IlJFU1RBVVJBTlRfQVBQLk15Lk15U2V0dGluZ3MuUkVTVEFVUkFOVF9EQkNvbm5lY3Rpb25TdHJpbmciIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iUEFfUFJJTlRfQ0FMTF9DRU5URVIiPjxQYXJhbWV0ZXIgTmFtZT0iQFRfSUQiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLkludDMyKSg/VF9JRCk8L1BhcmFtZXRlcj48UHJvY05hbWU+UEFfUFJJTlRfQ0FMTF9DRU5URVI8L1Byb2NOYW1lPjwvUXVlcnk+PFJlc3VsdFNjaGVtYT48RGF0YVNldCBOYW1lPSJzcWxEYXRhU291cmNlMSI+PFZpZXcgTmFtZT0iUEFfUFJJTlRfQ0FMTF9DRU5URVIiPjxGaWVsZCBOYW1lPSJUX0lEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQklMTF9OVU1CRVJfU0VSVkVSIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQklMTF9PUkRFUl9TRVJWRVIiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVU0VSX0NSRUFURSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJTkZPIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRFVEFJTFMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTk9URV9UQUJFMyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDX0RBVEUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJJU19QUklOVCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iSVNfSU5TRVJUIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJVU0VSX0lOU0VSVCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJTlNFUlRfQ19EQVRFIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ComponentStorage>
+  <ObjectStorage>
+    <Item1 Ref="2" ObjectType="DevExpress.XtraReports.Parameters.DynamicListLookUpSettings, DevExpress.Printing.v20.1.Core" DataSource="#Ref-0" DataMember="V_SALES_TEMP" ValueMember="BILL_NUMBER" DisplayMember="BILL_NUMBER" />
+    <Item2 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v20.1" Ref="3" Content="System.Int32" Type="System.Type" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>

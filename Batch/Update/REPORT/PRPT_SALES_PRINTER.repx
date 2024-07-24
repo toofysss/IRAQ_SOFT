@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.1.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="PRPT_SALES_PRINTER" RollPaper="true" Margins="0, 0, 116, 0" PaperKind="Custom" PageWidth="283" PageHeight="195" Version="20.1" ShowPrintStatusDialog="false" ShowPrintMarginsWarning="false" DataMember="PV_GET_SALES_CATEGORY" DataSource="#Ref-0">
+  <Parameters>
+    <Item1 Ref="3" Description="Parameter1" ValueInfo="2020-03-11" Name="D1" Type="#Ref-2" />
+    <Item2 Ref="4" Description="Parameter2" ValueInfo="2020-03-12" Name="D2" Type="#Ref-2" />
+  </Parameters>
+  <CalculatedFields>
+    <Item1 Ref="5" Name="PERCENTAGE" Expression="([TOTAL_SELL]-[TOTAL_COST])/(Sum( [TOTAL_SELL])-Sum( [TOTAL_COST]))" DataMember="PV_GET_SALES_CATEGORY" />
+  </CalculatedFields>
+  <Bands>
+    <Item1 Ref="6" ControlType="TopMarginBand" Name="TopMargin" HeightF="116">
+      <Controls>
+        <Item1 Ref="7" ControlType="XRLabel" Name="label1" Text="تقرير ارباح اقسام الطابعات" TextAlignment="MiddleCenter" SizeF="262.1959,43.15134" LocationFloat="7.399877,4.999954" Font="Times New Roman, 16pt, style=Bold, Underline" Padding="2,2,0,0,100">
+          <StylePriority Ref="8" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="9" ControlType="XRTable" Name="table1" TextAlignment="MiddleCenter" SizeF="283.0001,28.02429" LocationFloat="1.430511E-06,86.15131" Font="Times New Roman, 11pt, style=Bold" ForeColor="Black" BackColor="WhiteSmoke" Borders="All">
+          <Rows>
+            <Item1 Ref="10" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="11" ControlType="XRTableCell" Name="tableCell1" Weight="0.55200418442317944" Text="النسبة" Padding="2,2,0,0,100" />
+                <Item2 Ref="12" ControlType="XRTableCell" Name="XrTableCell5" Weight="0.629220756459718" Multiline="true" Text="الربح" Padding="2,2,0,0,100" />
+                <Item3 Ref="13" ControlType="XRTableCell" Name="XrTableCell3" Weight="0.86016945661160871" Multiline="true" Text="البيع" Padding="2,2,0,0,100" />
+                <Item4 Ref="14" ControlType="XRTableCell" Name="XrTableCell1" Weight="0.66077062526716157" Multiline="true" Text="الكلفة" Padding="2,2,0,0,100" />
+                <Item5 Ref="15" ControlType="XRTableCell" Name="tableCell4" Weight="0.9048291769130492" Text="المجموعة" Padding="2,2,0,0,100">
+                  <StylePriority Ref="16" UsePadding="false" />
+                </Item5>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="17" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="18" ControlType="XRLabel" Name="XrLabel5" TextFormatString="{0:d}" RightToLeft="Yes" Multiline="true" TextAlignment="MiddleLeft" SizeF="97.49782,23" LocationFloat="144.6056,53.1513" Font="Times New Roman, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="19" EventName="BeforePrint" PropertyName="Text" Expression="?D1" />
+          </ExpressionBindings>
+          <StylePriority Ref="20" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="21" ControlType="XRLabel" Name="XrLabel3" RightToLeft="Yes" Multiline="true" Text="الى :" TextAlignment="MiddleRight" SizeF="27.93451,23" LocationFloat="107.8597,53.1513" Font="Times New Roman, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="22" UseFont="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="23" ControlType="XRLabel" Name="XrLabel4" TextFormatString="{0:d}" RightToLeft="Yes" Multiline="true" TextAlignment="MiddleLeft" SizeF="100.4599,23" LocationFloat="7.399877,53.1513" Font="Times New Roman, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="?D2" />
+          </ExpressionBindings>
+          <StylePriority Ref="25" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="26" ControlType="XRLabel" Name="XrLabel6" RightToLeft="Yes" Multiline="true" Text="من :" TextAlignment="MiddleRight" SizeF="30.89658,23" LocationFloat="242.1035,53.1513" Font="Times New Roman, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="27" UseFont="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="28" ControlType="XRLine" Name="XrLine1" SizeF="267.6,4.333351" LocationFloat="5.400022,79.1513" />
+      </Controls>
+    </Item1>
+    <Item2 Ref="29" ControlType="DetailBand" Name="Detail" HeightF="23.06598">
+      <Controls>
+        <Item1 Ref="30" ControlType="XRTable" Name="table2" TextAlignment="MiddleCenter" SizeF="283.0001,23.06598" LocationFloat="5.245209E-06,0" Font="Tahoma, 8pt" Borders="All">
+          <Rows>
+            <Item1 Ref="31" ControlType="XRTableRow" Name="tableRow2" Weight="1">
+              <Cells>
+                <Item1 Ref="32" ControlType="XRTableCell" Name="tableCell6" Weight="0.55200410697808844" CanGrow="false" TextFormatString="{0:#,0.##%}" Text="اجمالي" Font="Tahoma, 7pt" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="33" EventName="BeforePrint" PropertyName="Text" Expression="[PERCENTAGE]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="34" UseFont="false" />
+                </Item1>
+                <Item2 Ref="35" ControlType="XRTableCell" Name="XrTableCell6" Weight="0.62922066776217023" TextFormatString="{0:#,0.##}" Multiline="true" Text="XrTableCell6" Font="Tahoma, 7pt" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="36" EventName="BeforePrint" PropertyName="Text" Expression="[TOTAL_ARBAH]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="37" UseFont="false" />
+                </Item2>
+                <Item3 Ref="38" ControlType="XRTableCell" Name="XrTableCell4" Weight="0.86016938587552438" TextFormatString="{0:#,0.##}" Multiline="true" Text="XrTableCell4" Font="Tahoma, 7pt" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="39" EventName="BeforePrint" PropertyName="Text" Expression="[TOTAL_SELL]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="40" UseFont="false" />
+                </Item3>
+                <Item4 Ref="41" ControlType="XRTableCell" Name="XrTableCell2" Weight="0.66077054286831016" CanGrow="false" TextFormatString="{0:#,0.##}" Font="Tahoma, 7pt" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="42" EventName="BeforePrint" PropertyName="Text" Expression="[TOTAL_COST]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="43" UseFont="false" />
+                </Item4>
+                <Item5 Ref="44" ControlType="XRTableCell" Name="tableCell9" Weight="0.904829699864727" CanGrow="false" Text="اسم المادة" Font="Tahoma, 7pt" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="45" EventName="BeforePrint" PropertyName="Text" Expression="[PRINTER_NAME]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="46" UseFont="false" UsePadding="false" />
+                </Item5>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="47" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+      </Controls>
+    </Item2>
+    <Item3 Ref="48" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="0" />
+    <Item4 Ref="49" ControlType="ReportFooterBand" Name="ReportFooter" PageBreak="AfterBand" HeightF="0" />
+    <Item5 Ref="50" ControlType="PageFooterBand" Name="PageFooter" HeightF="183.5664">
+      <Controls>
+        <Item1 Ref="51" ControlType="XRLabel" Name="XrLabel9" Text="المبلغ اعلاه بدون خصم + خدمة" TextAlignment="MiddleCenter" SizeF="262.1959,25.4430084" LocationFloat="7.399877,143.2779" Font="Times New Roman, 12pt, style=Bold, Underline" Padding="2,2,0,0,100">
+          <StylePriority Ref="52" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="53" ControlType="XRPageBreak" Name="pageBreak1" LocationFloat="0,175.5664" />
+        <Item3 Ref="54" ControlType="XRLabel" Name="XrLabel7" Text="الربح" TextAlignment="MiddleCenter" SizeF="124.2933,33" LocationFloat="148.7068,77.99998" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <StylePriority Ref="55" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="56" ControlType="XRLabel" Name="XrLabel8" TextFormatString="{0:#,0.##}" CanGrow="false" Text="العدد" TextAlignment="MiddleCenter" SizeF="143.3067,33" LocationFloat="5.400022,77.99998" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <Summary Ref="57" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="58" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TOTAL_SELL]-[TOTAL_COST])" />
+          </ExpressionBindings>
+          <StylePriority Ref="59" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="60" ControlType="XRLabel" Name="XrLabel1" Text="اجمالي الكلفة" TextAlignment="MiddleCenter" SizeF="124.2933,33" LocationFloat="148.7068,5" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <StylePriority Ref="61" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="62" ControlType="XRLabel" Name="label6" TextFormatString="{0:#,0.##}" CanGrow="false" Text="العدد" TextAlignment="MiddleCenter" SizeF="143.3067,33" LocationFloat="5.400022,41.99999" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <Summary Ref="63" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="64" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TOTAL_SELL])" />
+          </ExpressionBindings>
+          <StylePriority Ref="65" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="66" ControlType="XRLabel" Name="label3" Text="اجمالي البيع" TextAlignment="MiddleCenter" SizeF="124.2933,33" LocationFloat="148.7068,41.99999" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <StylePriority Ref="67" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="68" ControlType="XRPageInfo" Name="XrPageInfo1" PageInfo="DateTime" TextFormatString="{0:dd/MM/yyyy hh:mm tt}" TextAlignment="TopCenter" SizeF="256.1916,23" LocationFloat="13.40421,116.2779" Padding="2,2,0,0,100">
+          <StylePriority Ref="69" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="70" ControlType="XRLabel" Name="XrLabel2" TextFormatString="{0:#,0.##}" CanGrow="false" Text="العدد" TextAlignment="MiddleCenter" SizeF="143.3067,33" LocationFloat="5.400022,5" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <Summary Ref="71" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="72" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TOTAL_COST])" />
+          </ExpressionBindings>
+          <StylePriority Ref="73" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item9>
+      </Controls>
+    </Item5>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v20.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IlJFU1RBVVJBTlRfQVBQLk15Lk15U2V0dGluZ3MuUkVTVEFVUkFOVF9EQkNvbm5lY3Rpb25TdHJpbmciIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iUFZfR0VUX1NBTEVTX0NBVEVHT1JZIj48UGFyYW1ldGVyIE5hbWU9IkBEMSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uRGF0ZVRpbWUpKD9EMSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IkBEMiIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uRGF0ZVRpbWUpKD9EMik8L1BhcmFtZXRlcj48UHJvY05hbWU+UFZfR0VUX1NBTEVTX1BSSU5URVI8L1Byb2NOYW1lPjwvUXVlcnk+PFJlc3VsdFNjaGVtYT48RGF0YVNldCBOYW1lPSJzcWxEYXRhU291cmNlMSI+PFZpZXcgTmFtZT0iUFZfR0VUX1NBTEVTX0NBVEVHT1JZIj48RmllbGQgTmFtZT0iVE9UQUxfQ09TVCIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJUT1RBTF9TRUxMIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IlRPVEFMX0FSQkFIIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IldPUktfQ09ERSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlBSSU5URVJfSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJQUklOVEVSX05BTUUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ComponentStorage>
+  <ObjectStorage>
+    <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v20.1" Ref="2" Content="System.DateTime" Type="System.Type" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>

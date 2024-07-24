@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.1.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="RPT_REPORT_ITEMS" RollPaper="true" Margins="0, 0, 73, 27" PaperKind="Custom" PaperName="Printer3 80(72.1) x 297 mm" PageWidth="283" PageHeight="1169" Version="20.1" ShowPrintMarginsWarning="false" FilterString="[BILL_DATE] Between(?D1, ?D2)" DataMember="V_SALES_ITEM_DATE" DataSource="#Ref-0">
+  <Parameters>
+    <Item1 Ref="3" Description="Parameter1" Name="D1" Type="#Ref-2" />
+    <Item2 Ref="4" Description="Parameter1" Name="D2" Type="#Ref-2" />
+  </Parameters>
+  <CalculatedFields>
+    <Item1 Ref="5" Name="Total_T" FieldType="Double" Expression="[TOTAL_SELL]" DataMember="V_SALES_ITEM_DATE" />
+    <Item2 Ref="6" Name="QTY_T" FieldType="Double" Expression="[TOTAL_QTY]" DataMember="V_SALES_ITEM_DATE" />
+  </CalculatedFields>
+  <Bands>
+    <Item1 Ref="7" ControlType="TopMarginBand" Name="TopMargin" HeightF="72.50899">
+      <Controls>
+        <Item1 Ref="8" ControlType="XRTable" Name="table1" TextAlignment="MiddleCenter" SizeF="264.9998,19.35764" LocationFloat="5.400021,53.15134" Font="Times New Roman, 9pt, style=Bold" ForeColor="Black" BackColor="WhiteSmoke" Borders="All">
+          <Rows>
+            <Item1 Ref="9" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="10" ControlType="XRTableCell" Name="tableCell1" Weight="1.2312633709528458" Text="اجمالي البيع" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <StylePriority Ref="11" UseFont="false" />
+                </Item1>
+                <Item2 Ref="12" ControlType="XRTableCell" Name="tableCell7" Weight="1.0656286622480347" Text="اجمالي الكمية" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <StylePriority Ref="13" UseFont="false" UsePadding="false" />
+                </Item2>
+                <Item3 Ref="14" ControlType="XRTableCell" Name="tableCell3" Weight="1.172943364205737" Text="التاريخ" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <StylePriority Ref="15" UseFont="false" />
+                </Item3>
+                <Item4 Ref="16" ControlType="XRTableCell" Name="tableCell4" Weight="1.2369797442753054" Text="اسم المادة" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <StylePriority Ref="17" UseFont="false" UsePadding="false" />
+                </Item4>
+                <Item5 Ref="18" ControlType="XRTableCell" Name="tableCell5" Weight="0.46685617809828872" Text="ت" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <StylePriority Ref="19" UseFont="false" UsePadding="false" />
+                </Item5>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="20" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="21" ControlType="XRLabel" Name="label1" Text="تقرير مبيعات المواد" TextAlignment="MiddleCenter" SizeF="261,51.15134" LocationFloat="7.399876,2.000008" Font="Times New Roman, 16pt, style=Bold, Underline" Padding="2,2,0,0,100">
+          <StylePriority Ref="22" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+      </Controls>
+    </Item1>
+    <Item2 Ref="23" ControlType="DetailBand" Name="Detail" HeightF="19.35764">
+      <Controls>
+        <Item1 Ref="24" ControlType="XRTable" Name="table2" TextAlignment="MiddleCenter" SizeF="264.9998,19.35764" LocationFloat="5.400021,0" Font="Times New Roman, 9.75pt, style=Bold" Borders="All">
+          <Rows>
+            <Item1 Ref="25" ControlType="XRTableRow" Name="tableRow2" Weight="1">
+              <Cells>
+                <Item1 Ref="26" ControlType="XRTableCell" Name="tableCell6" Weight="1.2312632839502564" TextFormatString="{0:N0}" Text="اجمالي" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="27" EventName="BeforePrint" PropertyName="Text" Expression="[TOTAL_SELL]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="28" UseFont="false" />
+                </Item1>
+                <Item2 Ref="29" ControlType="XRTableCell" Name="tableCell2" Weight="1.0656290202862297" Text="tableCell2" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="30" EventName="BeforePrint" PropertyName="Text" Expression="[TOTAL_QTY]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="31" UseFont="false" UsePadding="false" />
+                </Item2>
+                <Item3 Ref="32" ControlType="XRTableCell" Name="tableCell8" Weight="1.1729428681412915" TextFormatString="{0:dd/MM/yyyy}" Text="العدد" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="33" EventName="BeforePrint" PropertyName="Text" Expression="[BILL_DATE]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="34" UseFont="false" />
+                </Item3>
+                <Item4 Ref="35" ControlType="XRTableCell" Name="tableCell9" Weight="1.236979631929048" Text="اسم المادة" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="36" EventName="BeforePrint" PropertyName="Text" Expression="[ITEM_NAME]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="37" UseFont="false" UsePadding="false" />
+                </Item4>
+                <Item5 Ref="38" ControlType="XRTableCell" Name="tableCell10" Weight="0.46685623259298953" Font="Times New Roman, 8pt, style=Bold" Padding="2,2,0,0,100">
+                  <Summary Ref="39" Running="Report" />
+                  <ExpressionBindings>
+                    <Item1 Ref="40" EventName="BeforePrint" PropertyName="Text" Expression="sumRecordNumber([BILL_DATE])" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="41" UseFont="false" UsePadding="false" />
+                </Item5>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="42" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+      </Controls>
+    </Item2>
+    <Item3 Ref="43" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="27.08101">
+      <Controls>
+        <Item1 Ref="44" ControlType="XRPageBreak" Name="pageBreak1" LocationFloat="0,9.99999" />
+      </Controls>
+    </Item3>
+    <Item4 Ref="45" ControlType="ReportFooterBand" Name="ReportFooter" PageBreak="AfterBand" HeightF="82.58625">
+      <Controls>
+        <Item1 Ref="46" ControlType="XRLabel" Name="label2" Text="اجمالي الكمية" TextAlignment="MiddleCenter" SizeF="121.693,33" LocationFloat="148.7068,39.6036" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <StylePriority Ref="47" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="48" ControlType="XRLabel" Name="label4" TextFormatString="{0:#,0.##}" TextAlignment="MiddleCenter" SizeF="141.3069,33" LocationFloat="7.399876,39.6036" Font="Times New Roman, 16pt, style=Bold" Padding="2,2,0,0,100" Borders="All">
+          <Summary Ref="49" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="50" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([QTY_T])" />
+          </ExpressionBindings>
+          <StylePriority Ref="51" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="52" ControlType="XRLabel" Name="label6" TextFormatString="{0:N0}" TextAlignment="MiddleCenter" SizeF="141.3069,33" LocationFloat="7.399876,0" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <Summary Ref="53" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="54" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Total_T])" />
+          </ExpressionBindings>
+          <StylePriority Ref="55" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="56" ControlType="XRLabel" Name="label3" Text="اجمالي المبلغ" TextAlignment="MiddleCenter" SizeF="121.693,33" LocationFloat="148.7068,0" Font="Times New Roman, 16pt, style=Bold" BackColor="WhiteSmoke" Padding="2,2,0,0,100" Borders="All">
+          <StylePriority Ref="57" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+      </Controls>
+    </Item4>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v20.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IlJFU1RBVVJBTlRfQVBQLk15Lk15U2V0dGluZ3MuUkVTVEFVUkFOVF9EQkNvbm5lY3Rpb25TdHJpbmciIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlNlbGVjdFF1ZXJ5IiBOYW1lPSJWX1NBTEVTX0lURU1fREFURSI+PFRhYmxlcz48VGFibGUgTmFtZT0iVl9TQUxFU19JVEVNX0RBVEUiIC8+PC9UYWJsZXM+PENvbHVtbnM+PENvbHVtbiBUYWJsZT0iVl9TQUxFU19JVEVNX0RBVEUiIE5hbWU9IkJJTExfREFURSIgLz48Q29sdW1uIFRhYmxlPSJWX1NBTEVTX0lURU1fREFURSIgTmFtZT0iSVRFTV9OQU1FIiAvPjxDb2x1bW4gVGFibGU9IlZfU0FMRVNfSVRFTV9EQVRFIiBOYW1lPSJUT1RBTF9RVFkiIC8+PENvbHVtbiBUYWJsZT0iVl9TQUxFU19JVEVNX0RBVEUiIE5hbWU9IlRPVEFMX0NPU1QiIC8+PENvbHVtbiBUYWJsZT0iVl9TQUxFU19JVEVNX0RBVEUiIE5hbWU9IlRPVEFMX1NFTEwiIC8+PENvbHVtbiBUYWJsZT0iVl9TQUxFU19JVEVNX0RBVEUiIE5hbWU9IlRPVEFMX0FSQkFIIiAvPjwvQ29sdW1ucz48L1F1ZXJ5PjxSZXN1bHRTY2hlbWE+PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlZfU0FMRVNfSVRFTV9EQVRFIj48RmllbGQgTmFtZT0iQklMTF9EQVRFIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iSVRFTV9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRPVEFMX1FUWSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJUT1RBTF9DT1NUIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IlRPVEFMX1NFTEwiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVE9UQUxfQVJCQUgiIFR5cGU9IkRvdWJsZSIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ComponentStorage>
+  <ObjectStorage>
+    <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v20.1" Ref="2" Content="System.DateTime" Type="System.Type" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>
