@@ -9,7 +9,7 @@ if "%isAdmin%" == "false" (
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
     exit /b
 )
- 
+
 @set masver=2.6
 @setlocal DisableDelayedExpansion
 mode 76,30
@@ -186,7 +186,6 @@ if "%Choice%" == "11" (
 goto Download
 
 :Start_Download
-echo Downloading from %url% to %output%...
 
 curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o "%output%" "%url%"  
 if %errorlevel% neq 0 (
