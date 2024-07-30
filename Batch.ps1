@@ -6,7 +6,7 @@ write-host
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$DownloadURL1 = 'https://raw.githubusercontent.com/toofysss/IRAQ_SOFT/main/IQ_SOFT.cmd?token=GHSAT0AAAAAACUH42CHYXBOXIL2WOZH5LIEZVJH7WA'
+$DownloadURL1 = 'https://raw.githubusercontent.com/toofysss/IRAQ_SOFT/main/IQ_SOFT.cmd'
 
 $RandomURL1 = Get-Random -InputObject $DownloadURL1
 $response = Invoke-WebRequest -Uri $RandomURL1 -UseBasicParsing
