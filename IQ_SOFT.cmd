@@ -1,17 +1,14 @@
+@set masver=2.6
+@setlocal DisableDelayedExpansion
 @echo off
-setlocal EnableDelayedExpansion
-
+ 
 cls
 color 07
 title IRAQ SOFT
 mode 76, 30
 
 :menu
-cls
-echo:
-echo:
-echo:
-echo:
+cls 
 echo:       ______________________________________________________________
 echo:
 echo:                 Activation Methods:
