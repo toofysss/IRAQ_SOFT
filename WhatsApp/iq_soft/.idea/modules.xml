@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/iq_soft.iml" filepath="$PROJECT_DIR$/iq_soft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/iq_soft_android.iml" filepath="$PROJECT_DIR$/android/iq_soft_android.iml" />
+    </modules>
+  </component>
+</project>

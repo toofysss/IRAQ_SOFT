@@ -1,0 +1,10 @@
+^E:\PROJECT\NO NAMES\IQ_SOFT\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SE:/Project/No Names/iq_soft/windows" "-BE:/Project/No Names/iq_soft/build/windows/x64" --check-stamp-file "E:/Project/No Names/iq_soft/build/windows/x64/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

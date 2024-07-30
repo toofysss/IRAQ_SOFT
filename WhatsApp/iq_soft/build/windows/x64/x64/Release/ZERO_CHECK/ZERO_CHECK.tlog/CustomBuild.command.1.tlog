@@ -1,0 +1,10 @@
+^E:\PROJECT\NO NAMES\IQ_SOFT\BUILD\WINDOWS\X64\CMAKEFILES\E6E4B841594F9BA4B83781BF45C40084\GENERATE.STAMP.RULE
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SE:/Project/No Names/iq_soft/windows" "-BE:/Project/No Names/iq_soft/build/windows/x64" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/Project/No Names/iq_soft/build/windows/x64/iq_soft.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

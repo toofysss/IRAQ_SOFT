@@ -1,0 +1,28 @@
+^E:\PROJECT\NO NAMES\IQ_SOFT\BUILD\WINDOWS\X64\CMAKEFILES\137B0B81762B0D9CFF75137D22CE2EBA\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter "PROJECT_DIR=E:\Project\No Names\iq_soft" FLUTTER_ROOT=C:\flutter "FLUTTER_EPHEMERAL_DIR=E:\Project\No Names\iq_soft\windows\flutter\ephemeral" "PROJECT_DIR=E:\Project\No Names\iq_soft" FLUTTER_TARGET=lib\main.dart DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=true "PACKAGE_CONFIG=E:\Project\No Names\iq_soft\.dart_tool\package_config.json" C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\PROJECT\NO NAMES\IQ_SOFT\BUILD\WINDOWS\X64\CMAKEFILES\58A6372EB6E3C2F318C5D121AF39C71B\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\PROJECT\NO NAMES\IQ_SOFT\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"D:\Program Files\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SE:/Project/No Names/iq_soft/windows" "-BE:/Project/No Names/iq_soft/build/windows/x64" --check-stamp-file "E:/Project/No Names/iq_soft/build/windows/x64/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
