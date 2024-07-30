@@ -24,7 +24,7 @@ set Speedo_Update_Url=https://www.dropbox.com/scl/fi/r03a6ujar6lwp09s2r3pm/SPEED
 set Speedo_Update_File=SPEEDOO-POS-1.3.7.6-UPDATE.exe
 @REM Speedo Rest Url
 set Speedo_Rest_Update_Url=https://www.dropbox.com/s/pkkciumd4u2v0vu/Speedoo%20REST%20%203.0.3.3%20UPDATE.exe?e=1&dl=0
-set Speedo_Rest_Update_File=Speedoo REST 3.0.3.3_UPDATE.exe
+set Speedo_Rest_Update_File=SpeedooREST 3.0.3.3_UPDATE.exe
 set Speedo_Rest_Full_Url=https://www.dropbox.com/s/mzb59s2ypjung62/Speedoo%20APP%203.0.3.3%20FULL.exe?dl=0
 set Speedo_Rest_Full_File=Speedoo REST 3.0.3.3_FULL.exe
 @REM SQL Url
@@ -117,18 +117,17 @@ echo:
 echo:                                Download
 echo: 
 echo:                   [1] SPEEDO FULL        [2] SPEEDO UPDATE           
-echo:                   [3] SPEEDO REST FULL   [3] SPEEDO REST UPDATE  
-echo:                   [4] AMAN               [5] SQL 
-echo:                   [6] SUPER POINT        [7] POS 
-echo:                   [8] SIP                [9] Remotly 
-echo:                   [10] Point Charge Url  [0] Back To Back  
+echo:                   [3] SPEEDO REST FULL   [4] SPEEDO REST UPDATE  
+echo:                   [5] AMAN               [6] SQL 
+echo:                   [7] SUPER POINT        [8] POS 
+echo:                   [9] SIP                [10] Remotly 
+echo:                   [11] Point Charge Url  [0] Back To Back  
 echo:             __________________________________________________   
 
 set /p Choice="Enter A Menu Choice : "
 if "%Choice%" == "0" goto MainMenu
 if "%Choice%" == "1" (
     set url=%Speedo_Full_Url%
- 
     set output=%desktopPath%\%Speedo_Full_File%
     goto Start_Download
 )
@@ -187,7 +186,7 @@ goto Download
 
 :Start_Download
 
-curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o "%output%" "%url%"  
+curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o %output% %url%
 if %errorlevel% neq 0 (
     echo Download interrupted. Retrying...
     timeout /t 10
@@ -196,6 +195,8 @@ if %errorlevel% neq 0 (
 
 echo Download Complete. Waiting To Opening The File...
 start "" %output%
+pause
+goto Download
 
 ::::::::::::::::::::::::::::::::: For DOWNLOAD :::::::::::::::::::::::::::::::::::::::::::
 
